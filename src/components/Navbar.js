@@ -1,40 +1,53 @@
 import React, { useRef } from "react";
-
+import { FaSearch, FaLocationArrow } from "react-icons/fa";
+import { GoIssueOpened } from "react-icons/go";
+import { RiPinDistanceFill } from "react-icons/ri";
+import {
+  BsFillPeopleFill,
+  BsCalendarMinusFill,
+  BsThreeDots,
+} from "react-icons/bs";
 export default function Navbar({ logo }) {
-  const dropdownRef = useRef(null);
-
   return (
     <>
-      <div className="navbar-wrapper">
-        <img src={logo} alt="Logo" className="logo" />
-        <div className="navbar-options-wrapper">
-          <div className="navbar-option">
-            <h2>Learn More</h2>
+      <img src={logo} alt="logo" className="logo" />
+      <div className="header-wrapper">
+        <div className="searchbar-wrapper">
+          <button className="location-button">
+            <FaLocationArrow size="1.7em" />
+          </button>
+          <input className="searchbar" />
+          <button className="searchbutton">
+            <FaSearch size="1.7em" color="white" />
+          </button>
+        </div>
+        <div className="parameters-wrapper">
+          <div className="parameters-option">
+            <GoIssueOpened className="parameter-icon" />
+            Issues
           </div>
-          <div className="navbar-option">
-            <h2>Contact</h2>
+          <div className="parameters-option">
+            <BsFillPeopleFill className="parameter-icon" />
+            Size
           </div>
-          <div className="join-button">
-            <h2>Get Started</h2>
+          <div className="parameters-option">
+            <RiPinDistanceFill className="parameter-icon" />
+            Distance
           </div>
-          <div
-            className="dropdown-toggle"
-            onClick={() => {
-              if (dropdownRef.current.style.display != "none") {
-                dropdownRef.current.style.display = "none";
-              } else {
-                dropdownRef.current.style.display = "flex";
-              }
-            }}
-          >
-            ≡
+          <div className="parameters-option">
+            <BsCalendarMinusFill className="parameter-icon" />
+            Date/Time
+          </div>
+          <div className="parameters-option">
+            <BsThreeDots className="parameter-icon" />
+            More
+          </div>
+          <div className="showfiltermenu-button parameters-option">
+            <BsThreeDots className="parameter-icon" />
+            Show Filters
           </div>
         </div>
-      </div>
-      <div className="dropdown-wrapper" ref={dropdownRef}>
-        <div className="dropdown-option">Learn More</div>
-        <div className="dropdown-option">Contact</div>
-        <div className="dropdown-option">Get Started</div>
+        <div className="account-settings"></div>
       </div>
     </>
   );
