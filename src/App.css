@@ -5,15 +5,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffd3e8;
 }
 .logo {
   margin-right: auto;
-  width: 15em;
-  transition: 0.6s;
+  width: 12em;
+  transition: 0.4s;
   padding: 0;
 }
 .logo:hover {
-  width: 12em;
+  width: 10em;
 }
 .navbar-options-wrapper {
   display: flex;
@@ -48,16 +49,34 @@ h2 {
 }
 .join-button h2 {
   padding: 0.5em;
-  background-color: #007c77;
+  background-color: darkorchid;
   color: white;
   border-radius: 1.2em;
   transition: 0.4s;
 }
 .join-button:hover h2 {
-  background-color: #204b57;
+  background-color: pink;
+  color: black;
 }
 .dropdown-toggle {
   display: none;
+}
+.dropdown-wrapper {
+  font-size: 2em;
+  display: none;
+  background-color: darkcyan;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: white;
+  float: right;
+}
+.dropdown-option {
+  padding: 0.5em 1em 0.5em 1em;
+  font-weight: 700;
+  transition: 0.5s;
+}
+.dropdown-option:hover {
+  background-color: darkslategrey;
 }
 @media screen and (max-width: 850px) {
   .dropdown-toggle {
@@ -65,7 +84,6 @@ h2 {
     font-size: 7em;
     margin-right: 0.1em;
     margin-left: 0.1em;
-    margin-bottom: 0.2em;
   }
   .navbar-option {
     display: none;
@@ -74,5 +92,14 @@ h2 {
 @media screen and (max-width: 600px) {
   .join-button {
     display: none;
+  }
+}
+@media screen and (min-width: 850px) {
+  .dropdown-toggle {
+    display: none;
+  }
+  .dropdown-wrapper {
+    display: none;
+    opacity: 0;
   }
 }
